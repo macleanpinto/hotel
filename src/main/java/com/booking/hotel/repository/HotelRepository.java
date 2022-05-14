@@ -1,10 +1,13 @@
 package com.booking.hotel.repository;
 
 import com.booking.hotel.entity.Hotel;
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 
+import reactor.core.publisher.Mono;
+
 @Repository
-public interface HotelRepository extends JpaRepository<Hotel, Integer> {
-    Hotel findById(int id);
+public interface HotelRepository extends ReactiveCrudRepository<Hotel, Integer> {
+    Mono<Hotel> findById(int id);
 }
