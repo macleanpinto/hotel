@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HotelApplication {
 
 	public static void main(String[] args) {
+		WarmingUpHealthCheck warmingUpHealthCheck = new WarmingUpHealthCheck();
+		warmingUpHealthCheck.run();
 		SpringApplication.run(HotelApplication.class, args);
+
 	}
 
 }
